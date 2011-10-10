@@ -51,6 +51,8 @@ def merge(sitemap, sitemap2, verbose):
 	sitemap_handle.close()
 	sitemap2_handle.close()
 
+	# now finish the job and overwrite sitemap
+
 if __name__ == '__main__':
 	try:
         	opts, args = getopt.getopt(sys.argv[1:], "hs:t:v", ["help", "sitemap=", "sitemap2=", "verbose"])
