@@ -3,19 +3,24 @@
 require 'erb'
 require 'rexml/document'
 
-if ARGV.length != 2
-	puts "sitemap_merger.rb takes two arguments. The two sitemap.xml files you want to merge"
+if ARGV.length < 2
+	puts "sitemap_merger.rb takes at least two arguments. The two (or more) sitemap.xml files you want to merge"
 	exit(1)
 end
 
 urls = []
 
 ARGV.each do |sitemap_file|
-	xml = File.read(sitemap_file)
-	sitemap = REXML::Document.new(xml)
+	
+	begin
+		xml = File.read(sitemap_file)
+		sitemap = REXML::Document.new(xml)
 
-	sitemap.elements.each('urlset/url') do |url|
-		urls.push(url)	
+		sitemap.elements.each('urlset/url') do |url|
+			urls.push(url)	
+		end
+	rescue Exception => ex
+		# for now do nothing ? 	
 	end
 end
 
