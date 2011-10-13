@@ -1,4 +1,4 @@
-#Sitemap Merger
+# Sitemap Merger
 A simple Ruby script that takes N number of sitemap.xml files (http://www.sitemaps.org/) and merges them to create a single file. I wrote it so I could merge my fairly static sitemap.xml file with the one generated every time I wrote a blog post.
 
 
