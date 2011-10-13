@@ -4,6 +4,7 @@ A simple Ruby script that takes N number of sitemap.xml files (http://www.sitema
 
 ### Running out of cron on your web server
 Run it once a day (or more) to make sure that your sitemap.xml file is always up-to-date:
+
 1 8 * * * ~/bin/sitemap_merger.rb sitemap.xml ~/public_html/blog/sitemap.xml > ~/public_html/sitemap.xml
 
 ### Issues?
