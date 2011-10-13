@@ -20,7 +20,8 @@ ARGV.each do |sitemap_file|
 			urls.push(url)	
 		end
 	rescue Exception => ex
-		# for now do nothing ? 	
+		puts "#{sitemap_file} does not exist!"
+		exit(1)
 	end
 end
 
